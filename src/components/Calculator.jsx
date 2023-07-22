@@ -48,7 +48,7 @@ export default function Calculator() {
   ];
 
   return (
-    <div className="mx-auto mt-14 overflow-hidden mb-2 lg:w-2/6 md:w-3/6 sm:w-4/6">
+    <div className="mx-auto mt-14 overflow-hidden mr-10 mb-2 lg:w-4/6 md:w-3/6 sm:w-4/6">
       <div className="grid grid-cols-4 grid-flow-row bg-slate-600 border-solid border-black border-2">
         <div className="col-span-4 text-white text-3xl text-right p-5 h-24 pt-16 pb-0 mb-2">
           <AnswerSection
