@@ -25,6 +25,28 @@ export default function Calculator() {
     };
   }, []);
 
+  const buttons = [
+    { label: 'AC', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '+/-', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '%', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '÷', className: 'bg-orange-500', onClick: clickedButton },
+    { label: '7', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '8', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '9', className: 'bg-gray-300', onClick: clickedButton },
+    { label: 'x', className: 'bg-orange-500', onClick: clickedButton },
+    { label: '4', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '5', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '6', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '-', className: 'bg-orange-500', onClick: clickedButton },
+    { label: '1', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '2', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '3', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '+', className: 'bg-orange-500', onClick: clickedButton },
+    { label: '0', className: 'bg-gray-300 col-span-2', onClick: clickedButton },
+    { label: '.', className: 'bg-gray-300', onClick: clickedButton },
+    { label: '=', className: 'bg-orange-500', onClick: clickedButton },
+  ];
+
   return (
     <div className="mx-auto mt-14 overflow-hidden mb-2 lg:w-2/6 md:w-3/6 sm:w-4/6">
       <div className="grid grid-cols-4 grid-flow-row bg-slate-600 border-solid border-black border-2">
@@ -35,63 +57,16 @@ export default function Calculator() {
             operation={result.operation ? result.operation : ''}
           />
         </div>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          AC
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          +/-
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          %
-        </button>
-        <button type="button" className="bg-orange-500 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          ÷
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          7
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          8
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          9
-        </button>
-        <button type="button" className="bg-orange-500 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          x
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          4
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          5
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          6
-        </button>
-        <button type="button" className="bg-orange-500 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          -
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          1
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          2
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          3
-        </button>
-        <button type="button" className="bg-orange-500 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          +
-        </button>
-        <button type="button" className="bg-gray-300 h-20 col-span-2 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          0
-        </button>
-        <button type="button" className="bg-gray-300 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          .
-        </button>
-        <button type="button" className="bg-orange-500 h-20 flex items-center justify-center border-solid border-2 border-white" onClick={clickedButton}>
-          =
-        </button>
+        {buttons.map((button) => (
+          <button
+            key={button.label}
+            type="button"
+            className={`h-20 flex items-center justify-center border-solid border-2 border-white ${button.className}`}
+            onClick={button.onClick}
+          >
+            {button.label}
+          </button>
+        ))}
       </div>
     </div>
   );
