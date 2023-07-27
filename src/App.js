@@ -1,12 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calculator from './components/Calculator';
 import QuoteApi from './components/QuoteApi';
+import Header from './components/Header';
+import Home from './components/Home';
 
 function calcComponent() {
   return (
-    <div className="mx-auto grid grid-cols-2 mt-14 overflow-hidden mb-2">
-      <QuoteApi />
-      <Calculator />
-
+    <div className="bg-[#f7f7f7]">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/quote" element={<QuoteApi />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
