@@ -68,6 +68,12 @@ The project was mainly built with HTML, CSS, and Javascript.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LIVE DEMO -->
+
+ ## 🚀 Live Demo <a name="live-demo"></a> 
+ 
+ [Live Demo Link](https://64c252628ab906078dd0e42c--calm-pavlova-636a7b.netlify.app/)
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
